@@ -2,31 +2,41 @@ import React from "react";
 
 const About = () => {
   return (
-    <div className="container mx-auto px-4 py-8">
-      <h1 className="text-4xl font-bold mb-6">About INAR Perfumes</h1>
-      <p className="text-lg mb-4">
-        INAR Perfumes is dedicated to bringing you the finest fragrances from
-        around the world. Our passion for perfumery and commitment to quality
-        ensures that each scent in our collection is a masterpiece.
-      </p>
-      <p className="text-lg mb-4">
-        Founded in [year], we have been serving our customers with a curated
-        selection of perfumes for every occasion and preference. From classic
-        scents to modern blends, we offer a diverse range that caters to all.
-      </p>
-      <h2 className="text-2xl font-semibold mt-8 mb-4">Our Mission</h2>
-      <p className="text-lg mb-4">
-        To provide our customers with high-quality, authentic fragrances that
-        enhance their personal style and leave a lasting impression.
-      </p>
-      <h2 className="text-2xl font-semibold mt-8 mb-4">Why Choose INAR?</h2>
-      <ul className="list-disc list-inside text-lg mb-4">
-        <li>Authentic products sourced directly from manufacturers</li>
-        <li>Wide range of fragrances for all preferences</li>
-        <li>Expert advice from our fragrance specialists</li>
-        <li>Competitive pricing and regular promotions</li>
-        <li>Excellent customer service</li>
-      </ul>
+    <div className="bg-black text-cream min-h-screen">
+      <div className="container mx-auto px-4 py-16">
+        <h1 className="text-4xl font-serif font-bold mb-8 text-gold-light">
+          About INAR Perfumes
+        </h1>
+        <div className="grid md:grid-cols-2 gap-12 items-center">
+          <div>
+            <p className="mb-6 text-lg">
+              INAR Perfumes is a luxury fragrance brand that brings the art of
+              perfumery to discerning customers. Our mission is to create
+              unique, high-quality scents that capture the essence of
+              individuality and sophistication.
+            </p>
+            <p className="mb-6 text-lg">
+              Founded in Karachi, Pakistan, INAR has quickly become synonymous
+              with elegance and innovation in the world of fragrances. We blend
+              traditional perfumery techniques with modern sensibilities to
+              craft scents that are both timeless and contemporary.
+            </p>
+            <p className="text-lg">
+              At INAR, we believe that every person deserves to find their
+              signature scent. That's why we offer a diverse range of fragrances
+              for both men and women, as well as our budget-friendly series for
+              those who want quality at an accessible price point.
+            </p>
+          </div>
+          <div className="relative h-96">
+            <img
+              src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Carouselmain-6NZs8PU6VerkfIZiZGQQ7k95EMn0TB.jpeg"
+              alt="INAR Perfumes"
+              className="absolute inset-0 w-full h-full object-cover rounded-lg shadow-lg"
+            />
+          </div>
+        </div>
+      </div>
     </div>
   );
 };

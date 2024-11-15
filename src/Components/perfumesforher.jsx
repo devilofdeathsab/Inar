@@ -2,6 +2,8 @@
 
 import React, { useState, useEffect } from "react";
 import { ChevronLeft, ChevronRight } from "lucide-react";
+import Product from "./Products/product";
+import { ChiggyWiggy, Florina } from "../assets/images";
 
 const Perfumesforher = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
@@ -18,16 +20,14 @@ const Perfumesforher = () => {
     {
       id: 1,
       name: "Florina",
-      image:
-        "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Femme%20Carousel-lZt5MQcX1onCafNXwBLNytBhEp2VJx.jpeg",
+      image: Florina,
       description: "A delicate blend of floral notes.",
       price: "Rs 1800",
     },
     {
       id: 2,
       name: "Chiggy Wiggy",
-      image:
-        "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Femme%20Carousel-lZt5MQcX1onCafNXwBLNytBhEp2VJx.jpeg",
+      image: ChiggyWiggy,
       description: "Inspired by VS Bombshell.",
       price: "Rs 1800",
     },
@@ -49,9 +49,9 @@ const Perfumesforher = () => {
   }, []);
 
   return (
-    <div className="container mx-auto px-4 py-8">
+    <div className="bg-black text-cream">
       {/* Hero Carousel */}
-      <div className="relative mb-16 h-[400px] overflow-hidden rounded-xl">
+      <div className="relative mb-16 h-[400px] overflow-hidden">
         {carouselImages.map((image, index) => (
           <div
             key={index}
@@ -64,6 +64,7 @@ const Perfumesforher = () => {
               alt={image.alt}
               className="w-full h-full object-cover"
             />
+            <div className="absolute inset-0 bg-black bg-opacity-40"></div>
           </div>
         ))}
         <button
@@ -80,23 +81,15 @@ const Perfumesforher = () => {
         </button>
       </div>
 
-      <h1 className="text-4xl font-bold mb-6">Perfumes for Her</h1>
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-        {perfumes.map((perfume) => (
-          <div key={perfume.id} className="bg-white p-6 rounded-lg shadow-md">
-            <img
-              src={perfume.image}
-              alt={perfume.name}
-              className="w-full h-48 object-cover mb-4 rounded"
-            />
-            <h2 className="text-xl font-semibold mb-2">{perfume.name}</h2>
-            <p className="text-gray-600 mb-4">{perfume.description}</p>
-            <p className="text-lg font-bold mb-4">{perfume.price}</p>
-            <button className="bg-black text-white px-4 py-2 rounded hover:bg-gray-800 transition duration-300">
-              Add to Cart
-            </button>
-          </div>
-        ))}
+      <div className="container mx-auto px-4 py-8">
+        <h1 className="text-4xl font-serif font-bold mb-6 text-gold-light">
+          Perfumes for Her
+        </h1>
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          {perfumes.map((perfume) => (
+            <Product key={perfume.id} perfume={perfume} />
+          ))}
+        </div>
       </div>
     </div>
   );
