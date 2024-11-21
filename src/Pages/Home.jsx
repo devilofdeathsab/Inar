@@ -17,7 +17,7 @@ const Hero = () => (
     <div className="absolute inset-0 z-0">
       <img
         src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Carouselmain-6NZs8PU6VerkfIZiZGQQ7k95EMn0TB.jpeg"
-        alt="INAR Perfume Collection"
+        alt="INAR Fragrances"
         className="w-full h-full object-cover"
       />
       <div className="absolute inset-0 bg-black opacity-50"></div>
@@ -29,7 +29,7 @@ const Hero = () => (
         transition={{ duration: 0.8 }}
         className="text-5xl md:text-7xl font-serif font-bold text-gold-light mb-4"
       >
-        INAR Perfumes
+        INAR Fragrances
       </motion.h1>
       <motion.p
         initial={{ opacity: 0, y: 20 }}

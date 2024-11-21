@@ -5,12 +5,12 @@ const About = () => {
     <div className="bg-black text-cream min-h-screen">
       <div className="container mx-auto px-4 py-16">
         <h1 className="text-4xl font-serif font-bold mb-8 text-gold-light">
-          About INAR Perfumes
+          About INAR Fragrances
         </h1>
         <div className="grid md:grid-cols-2 gap-12 items-center">
           <div>
             <p className="mb-6 text-lg">
-              INAR Perfumes is a luxury fragrance brand that brings the art of
+              INAR Fragrances is a luxury perfume brand that brings the art of
               perfumery to discerning customers. Our mission is to create
               unique, high-quality scents that capture the essence of
               individuality and sophistication.
@@ -31,7 +31,7 @@ const About = () => {
           <div className="relative h-96">
             <img
               src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Carouselmain-6NZs8PU6VerkfIZiZGQQ7k95EMn0TB.jpeg"
-              alt="INAR Perfumes"
+              alt="INAR Fragnances"
               className="absolute inset-0 w-full h-full object-cover rounded-lg shadow-lg"
             />
           </div>

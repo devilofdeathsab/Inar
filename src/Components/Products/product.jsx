@@ -1,8 +1,9 @@
-import React from "react";
+import React, { useState } from "react";
 import { useDispatch } from "react-redux";
 import { addToCart } from "../../Features/counter/cartslice";
 
 const Product = ({ perfume }) => {
+  const [showDetails, setShowDetails] = useState(false);
   const dispatch = useDispatch();
 
   const handleAddToCart = () => {
@@ -10,27 +11,33 @@ const Product = ({ perfume }) => {
   };
 
   return (
-    <div className="bg-white shadow-md rounded-lg overflow-hidden">
+    <div className="bg-white shadow-lg rounded-lg overflow-hidden transition-transform duration-300 hover:scale-105">
+      <div
+        className="relative pb-[100%] cursor-pointer"
+        onClick={() => setShowDetails(!showDetails)}
+      >
+        <img
+          src={perfume.image}
+          alt={perfume.name}
+          className="absolute inset-0 w-full h-full object-cover"
+        />
+      </div>
       <div className="p-4">
-        <div className="aspect-square w-full relative mb-4">
-          <img
-            src={perfume.image}
-            alt={perfume.name}
-            className="absolute inset-0 w-full h-full object-cover rounded-md"
-          />
-        </div>
-        <h2 className="text-xl font-semibold mb-2 line-clamp-2">
+        <h2 className="text-xl font-semibold text-gray-800 mb-2 truncate">
           {perfume.name}
         </h2>
-        <p className="text-sm text-gray-600 mb-2 line-clamp-3">
-          {perfume.description}
-        </p>
-        <p className="text-lg font-bold text-yellow-600">{perfume.price}</p>
+        <p className="text-lg font-bold text-gold">{perfume.price}</p>
       </div>
-      <div className="p-4 bg-gray-50">
+      {showDetails && (
+        <div className="p-4 bg-gray-50">
+          <p className="text-sm text-gray-600 mb-2">{perfume.description}</p>
+          <p className="text-sm text-gray-600 mb-2">Notes: {perfume.notes}</p>
+        </div>
+      )}
+      <div className="p-4 bg-gray-100">
         <button
           onClick={handleAddToCart}
-          className="w-full px-4 py-2 bg-yellow-600 text-white rounded hover:bg-yellow-700"
+          className="w-full px-4 py-2 bg-gold text-white rounded-md hover:bg-gold-dark transition-colors duration-300"
         >
           Add to Cart
         </button>
