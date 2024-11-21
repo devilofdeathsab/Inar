@@ -1,3 +1,4 @@
+// src/components/perfumesforher.jsx
 "use client";
 
 import React, { useState, useEffect } from "react";
@@ -7,6 +8,7 @@ import { ChiggyWiggy, Florina } from "../assets/images";
 
 const Perfumesforher = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
+  const [sortBy, setSortBy] = useState("name");
 
   const carouselImages = [
     {
@@ -32,6 +34,18 @@ const Perfumesforher = () => {
       price: "Rs 1800",
     },
   ];
+
+  const sortedPerfumes = [...perfumes].sort((a, b) => {
+    if (sortBy === "name") {
+      return a.name.localeCompare(b.name);
+    } else if (sortBy === "price") {
+      return (
+        parseFloat(a.price.replace("Rs ", "")) -
+        parseFloat(b.price.replace("Rs ", ""))
+      );
+    }
+    return 0;
+  });
 
   const nextSlide = () => {
     setCurrentSlide((prev) => (prev + 1) % carouselImages.length);
@@ -85,8 +99,22 @@ const Perfumesforher = () => {
         <h1 className="text-4xl font-serif font-bold mb-6 text-gold-light">
           Perfumes for Her
         </h1>
+        <div className="mb-4">
+          <label htmlFor="sort" className="mr-2">
+            Sort by:
+          </label>
+          <select
+            id="sort"
+            value={sortBy}
+            onChange={(e) => setSortBy(e.target.value)}
+            className="bg-white text-black px-2 py-1 rounded"
+          >
+            <option value="name">Name</option>
+            <option value="price">Price</option>
+          </select>
+        </div>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {perfumes.map((perfume) => (
+          {sortedPerfumes.map((perfume) => (
             <Product key={perfume.id} perfume={perfume} />
           ))}
         </div>

@@ -34,6 +34,14 @@ import BR540 from "./images/BR540.jpeg";
 
 export { BR540 };
 
+import sav from "./images/sauvage.jpg";
+
+export { sav };
+
+import Rosy from "./images/Rosy.jpg";
+
+export { Rosy };
+
 import PDM from "./images/PDM.jpeg";
 
 export { PDM };

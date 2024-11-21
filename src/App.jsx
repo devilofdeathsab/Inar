@@ -1,13 +1,14 @@
+// src/App.jsx
 import React from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import Navbar from "./Components/Navbar";
+import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
-import Home from "./Pages/Home";
+import Home from "./pages/Home";
 import About from "./pages/About";
 import Perfumesforher from "./Components/perfumesforher";
 import Perfumesforhim from "./Components/Perfumesforhim";
 import BudgetSeries from "./Components/BudgetSeries";
-import Contact from "./Components/Contact";
+import Contact from "./components/Contact";
 import Cart from "./Components/Cart";
 
 const App = () => {
